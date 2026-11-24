@@ -405,7 +405,7 @@ function renderNegoResult() {
       <div class="kpi"><small>هامش الأوردر ككل</small><b>${r.rev > 0 ? pct(r.margin) : '—'}</b></div>
       <div class="kpi"><small>أقصى خصم موحّد للأوردر يحافظ على الحد الآمن</small><b>${maxTxt}</b></div></div>
     <div class="st ${stKey}">${esc(stTxt)}</div>
-    ${r.rows.some(x => x.below || x.loss) ? '<div class="warn">في صنف أو أكتر تحت الحد الآمن لوحده حتى لو هامش الأوردر ككل كويس. شوف عمود الحالة.</div>' : ''}
+    ${r.rows.some(x => x.below || x.loss) ? '<div class="warn">في صنف أو أكتر تحت الحد الآمن لوحده (حتى لو هامش الأوردر ككل أعلى منه). شوف عمود الحالة.</div>' : ''}
     ${cu ? `<div class="warn">في ${cu} طقم لون خاص: تكلفتها بتعتمد على التكلفة الإضافية اللي كتبتها في الطقم نفسه.</div>` : ''}
     <div class="tbl-wrap"><table><thead><tr><th>الطقم</th><th>الكمية</th><th>التكلفة</th><th>سعر القائمة</th><th>سعر البيع بعد الخصم</th><th>ربح الطقم</th><th>أقل سعر آمن</th><th>الحالة</th></tr></thead><tbody>${rowsHtml}</tbody></table></div>
     <p class="note">"أقل سعر آمن" = التكلفة ÷ (1 − الهامش الآمن) مقرّب لأعلى لأقرب جنيه. الأرقام مبنية على الخامات والاستهلاك اللي إنت مدخلهم، مش ضمان ربح.</p>
