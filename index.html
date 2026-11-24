@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>حاسبة التكلفة والتسعير | elhassan home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+<div id="lock" class="lock">
+  <div class="lock-card">
+    <div class="logo">EH</div>
+    <h1>حاسبة التكلفة والتسعير</h1>
+    <p class="muted">elhassan home – بيت الحسن للديكور المنزلي</p>
+    <input id="pinInput" type="password" inputmode="numeric" autocomplete="off" placeholder="الرقم السري" maxlength="12">
+    <button id="pinBtn" class="btn primary block">فتح</button>
+    <p id="pinMsg" class="err"></p>
+    <p class="tiny muted">القفل بيمنع الفتح العادي بس، مش تشفير. الأرقام محفوظة في متصفح الجهاز ده فقط.</p>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <header class="top">
+    <div class="brand"><span class="logo sm">EH</span><div><b>حاسبة التكلفة والتسعير</b><small>elhassan home – بيت الحسن</small></div></div>
+    <div class="top-actions">
+      <button id="settingsBtn" class="btn ghost">الإعدادات</button>
+      <button id="lockBtn" class="btn ghost">قفل</button>
+    </div>
+  </header>
+  <div id="demoBanner" class="banner">القيم الموجودة دلوقتي <b>أرقام تجريبية توضيحية</b>، مش تكلفة المصنع الفعلية. عدّل الخامات والاستهلاك بأرقامك قبل ما تعتمد على أي سعر.</div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="materials" class="active">١. أسعار الخامات</button>
+    <button data-tab="recipe">٢. تكلفة وتسعير الطقم</button>
+    <button data-tab="nego">٣. التفاوض والخصم</button>
+    <button data-tab="order">٤. خامات الأوردر</button>
+  </nav>
+  <main>
+    <section id="tab-materials"></section>
+    <section id="tab-recipe" class="hidden"></section>
+    <section id="tab-nego" class="hidden"></section>
+    <section id="tab-order" class="hidden"></section>
+  </main>
+  <footer class="foot">الحاسبة دي أداة حساب، مش ضمان ربح. الهامش الآمن في الإعدادات افتراض منك وتقدر تغيّره. مصاريف زي الشحن وعمولات المعارض والمرتجعات مش محسوبة إلا لو أضفتها كتكلفة.</footer>
+</div>
+
+<div id="settingsModal" class="modal hidden"><div class="modal-card" id="settingsBody"></div></div>
+<div id="toast" class="toast"></div>
+<script src="app.js?v=1"></script>
+</body>
+</html>
